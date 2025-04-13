@@ -68,3 +68,63 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## ChatBot Feature
+
+This application includes a ChatBot powered by OpenAI's GPT-3.5 that can answer questions about stars and galaxies.
+
+### Setup
+
+1. Create a `.env` file in the root directory with the following content:
+   ```
+   REACT_APP_API_URL=http://localhost:3001
+   OPENAI_API_KEY=your_openai_api_key_here
+   PORT=3001
+   MONGODB_URI=mongodb://localhost:27017/stargazer_db
+   ```
+
+2. Replace `your_openai_api_key_here` with your actual OpenAI API key. You can get one from [OpenAI's website](https://platform.openai.com/api-keys).
+
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+4. Make sure MongoDB is installed and running on your machine. If you don't have MongoDB installed, you can download it from [MongoDB's website](https://www.mongodb.com/try/download/community).
+
+5. Seed the database with initial star data:
+   ```
+   npm run seed
+   ```
+
+### Running the Application
+
+To run both the React frontend and the Express backend:
+
+```
+npm run dev
+```
+
+This will start the React development server on port 3000 and the Express server on port 3001.
+
+### Backend Features
+
+The backend includes:
+
+1. **Express.js Server**: Serves the API endpoints and handles requests from the frontend
+2. **MongoDB Database**: Stores information about stars, galaxies, and chat conversations
+3. **OpenAI Integration**: Processes user questions through the OpenAI API
+4. **Persistent Conversations**: Saves chat history so users can continue conversations later
+
+### API Endpoints
+
+- **GET /api/stars**: Get a list of stars and galaxies 
+- **GET /api/stars/:id**: Get information about a specific star/galaxy
+- **POST /api/stars**: Add a new star/galaxy to the database
+- **GET /api/conversations**: Get a list of recent conversations
+- **GET /api/conversations/:id**: Get a specific conversation
+- **POST /api/chat**: Send a message to the chatbot
+
+### Using the ChatBot
+
+The ChatBot appears as a chat button on all pages except the Contact Us page. Click the button to open the chat window and ask questions about stars, galaxies, and other astronomical objects.
