@@ -196,7 +196,7 @@ body {
 /* Contact Us Page styles */
 .contact-us-page {
   min-height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1462331943505-49610a9766a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-image: url(./components/banner.jpg);
   background-size: cover;
   background-attachment: fixed;
   padding: 80px 20px 20px;
